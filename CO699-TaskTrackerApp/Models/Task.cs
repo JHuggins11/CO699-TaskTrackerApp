@@ -18,7 +18,7 @@ namespace CO699_TaskTrackerApp.Models
         public string Name { get; set; }
 
         [Required]
-        public string Priority { get; set; }
+        public Priority Priority { get; set; }
 
         [DataType(DataType.Date), Required]
         public DateTime DueDate { get; set; }
