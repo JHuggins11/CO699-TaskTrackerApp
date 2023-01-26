@@ -11,5 +11,6 @@ namespace CO699_TaskTrackerApp.Data
         {
         }
         public DbSet<CO699_TaskTrackerApp.Models.User> User { get; set; } = default!;
+        public DbSet<CO699_TaskTrackerApp.Models.UserTask> UserTask { get; set; } = default!;
     }
 }
