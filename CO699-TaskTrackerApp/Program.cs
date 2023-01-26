@@ -14,8 +14,6 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<TaskTrackerAppContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TaskTrackerAppContext") ?? throw new InvalidOperationException("Connection string 'TaskTrackerAppContext' not found.")));
 
 var app = builder.Build();
 
