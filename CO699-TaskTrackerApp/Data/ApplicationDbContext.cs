@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using CO699_TaskTrackerApp.Models;
 
 namespace CO699_TaskTrackerApp.Data
 {
@@ -9,5 +10,6 @@ namespace CO699_TaskTrackerApp.Data
             : base(options)
         {
         }
+        public DbSet<CO699_TaskTrackerApp.Models.User> User { get; set; } = default!;
     }
 }
