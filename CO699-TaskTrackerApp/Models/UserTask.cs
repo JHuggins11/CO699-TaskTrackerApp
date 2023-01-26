@@ -7,9 +7,9 @@ namespace CO699_TaskTrackerApp.Models
     /// have zero, one or many tasks.
     /// 
     /// Created: 20/01/2023
-    /// Modified: 20/01/2023
+    /// Modified: 26/01/2023
     /// </summary>
-    public class Task
+    public class UserTask
     {
         [Key]
         public int Id { get; set; }
