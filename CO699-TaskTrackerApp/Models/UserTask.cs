@@ -7,22 +7,23 @@ namespace CO699_TaskTrackerApp.Models
     /// have zero, one or many tasks.
     /// 
     /// Created: 20/01/2023
-    /// Modified: 26/01/2023
+    /// Modified: 30/01/2023
     /// </summary>
     public class UserTask
     {
         [Key]
         public int Id { get; set; }
 
-        [MaxLength(60), Required]
+        [Display(Name = "Task Name"), MaxLength(60), Required]
         public string Name { get; set; }
 
         [Required]
         public Priority Priority { get; set; }
 
-        [DataType(DataType.Date), Required]
+        [Display(Name = "Due Date"), DataType(DataType.Date), Required]
         public DateTime DueDate { get; set; }
 
+        [Display(Name = "Reminder")]
         public DateTime? ReminderDate { get; set; }
 
         [MaxLength(350)]
