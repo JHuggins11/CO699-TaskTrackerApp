@@ -30,3 +30,8 @@ body {
 .bg-azure {
     background-color: azure;
 }
+
+.pw-requirements {
+    border: 1px solid grey;
+    padding: 6px;
+}
