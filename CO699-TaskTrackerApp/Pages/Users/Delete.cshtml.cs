@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CO699_TaskTrackerApp.Pages.Users
 {
-    [Authorize]
+    //[Authorize]
     public class DeleteModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;

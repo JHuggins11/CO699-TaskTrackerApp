@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CO699_TaskTrackerApp.Pages.UserTasks
 {
-    [Authorize]
+    //[Authorize]
     public class EditModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;
