@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CO699_TaskTrackerApp.Data;
 using CO699_TaskTrackerApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CO699_TaskTrackerApp.Pages.Users
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;
