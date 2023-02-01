@@ -15,15 +15,17 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 
-// Password validation
 builder.Services.Configure<IdentityOptions>(options =>
 {
+    // Password validation
     options.Password.RequiredLength = 8;
     options.Password.RequiredUniqueChars = 1;
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireNonAlphanumeric = true;
     options.Password.RequireUppercase = true;
+
+    options.User.RequireUniqueEmail = true;
 });
 
 var app = builder.Build();
