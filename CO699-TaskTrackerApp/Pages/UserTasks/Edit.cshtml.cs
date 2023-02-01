@@ -36,6 +36,7 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
                 return NotFound();
             }
             UserTask = usertask;
+           ViewData["UserId"] = new SelectList(_context.User, "Id", "Email");
             return Page();
         }
 

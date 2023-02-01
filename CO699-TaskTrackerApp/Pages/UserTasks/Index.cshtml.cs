@@ -25,7 +25,8 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
         {
             if (_context.UserTask != null)
             {
-                UserTask = await _context.UserTask.ToListAsync();
+                UserTask = await _context.UserTask
+                .Include(u => u.User).ToListAsync();
             }
         }
     }

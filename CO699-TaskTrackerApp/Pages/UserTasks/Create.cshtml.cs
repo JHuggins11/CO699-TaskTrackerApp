@@ -21,6 +21,7 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
 
         public IActionResult OnGet()
         {
+        ViewData["UserId"] = new SelectList(_context.User, "Id", "Email");
             return Page();
         }
 
