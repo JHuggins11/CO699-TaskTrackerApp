@@ -9,6 +9,13 @@
 <p>
     <a class="btn btn-primary" asp-page="Create">Add Task</a>
 </p>
+<form>
+    <p>
+        <!-- Add asp-for search condition attribute from code-behind file for textbox -->
+        <input type="text" placeholder="Search"  /> 
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </p>
+</form>
 
 <!-- Bootstrap card for each task (reference: https://getbootstrap.com/docs/5.2/components/card/#header-and-footer) -->
 @foreach (var item in Model.UserTask)
