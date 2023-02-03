@@ -6,11 +6,27 @@
 }
 
 <h1>My List</h1>
-
 <p>
     <a class="btn btn-primary" asp-page="Create">Add Task</a>
 </p>
-<table class="table table-hover">
+
+<!-- Bootstrap card for each task (reference: https://getbootstrap.com/docs/5.2/components/card/#header-and-footer) -->
+@foreach (var item in Model.UserTask)
+{
+    <div class="card">
+        <div class="card-header">Due @item.DueDate</div>
+        <div class="card-body">
+            <h5 class="">@item.Name</h5>
+            <p class="card-text">@item.Description</p>
+            <div class="d-inline-flex justify-content-between">
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </div>
+        </div>
+    </div>
+}
+
+@*<table class="table table-hover">
     <thead>
         <tr>
             <th>
@@ -63,4 +79,4 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
