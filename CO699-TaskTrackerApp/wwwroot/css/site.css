@@ -23,6 +23,7 @@ body {
 
 /* Above is auto-generated code */
 
+/* _Layout.cshtml */
 .app-title {
     font-size: 24px;
 }
@@ -31,6 +32,7 @@ body {
     background-color: azure;
 }
 
+/* Register.cshtml */
 .pw-requirements {
     border: 1px solid grey;
     padding: 6px;
