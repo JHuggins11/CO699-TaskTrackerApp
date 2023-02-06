@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "My List";
 }
+<link href="~/css/site.css" rel="stylesheet" type="text/css" />
 
 <h1>My List</h1>
 <br />
@@ -30,7 +31,10 @@
             <b>Due @item.DueDate</b>
         </div>
         <div class="card-body">
-            <h5 class="card-title">@item.Name</h5>
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title">@item.Name [Priority: @item.Priority]</h5>
+                <b>Priority: @item.Priority</b>
+            </div>
             <p class="card-text">@item.Description</p>
             <div class="d-inline-flex justify-content-between">
                 <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
@@ -50,7 +54,10 @@
         <b>Due 15/02/2023</b>
     </div>
     <div class="card-body">
-        <h5 class="card-title">Complete assignment</h5>
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">Complete assignment</h5>
+            <b>Priority: High</b>
+        </div>
         <p class="card-text">See assignment brief for more details.</p>
         <div class="d-flex justify-content-between">
             <a class="btn btn-primary" asp-page="./Edit">Edit</a>
