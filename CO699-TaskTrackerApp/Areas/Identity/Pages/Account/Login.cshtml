@@ -4,12 +4,13 @@
 @{
     ViewData["Title"] = "Log In";
 }
+<link href="~/css/site.css" rel="stylesheet" type="text/css" />
 
-<h2>Welcome to Task Tracker</h2>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <section>
             <form id="account" method="post">
+                <h2>Welcome to Task Tracker</h2>
                 <h6>Please log in or register below.</h6>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
