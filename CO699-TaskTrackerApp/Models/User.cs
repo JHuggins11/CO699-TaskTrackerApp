@@ -10,17 +10,17 @@ namespace CO699_TaskTrackerApp.Models
     /// </summary>
     public class User
     {
+        // TODO: Check if this class is needed
+
         [Key]
         public int Id { get; set; }
 
         [DataType(DataType.EmailAddress), MaxLength(50), Required]
         public string Email { get; set; }
 
-        // TODO: Check if this is needed
         [DataType(DataType.Password), MinLength(8), MaxLength(40), Required]
         public string Password { get; set; }
 
-        // TODO: Check if this is needed
         [Required]
         public bool Is2FAEnabled { get; set; } = false;
 
