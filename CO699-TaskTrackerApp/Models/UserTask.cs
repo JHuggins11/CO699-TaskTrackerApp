@@ -14,8 +14,8 @@ namespace CO699_TaskTrackerApp.Models
         [Key]
         public int Id { get; set; }
 
-        // Foreign key - user ID from AspNetUsers table
-        public int UserId { get; set; }
+        // Foreign key - user ID taken from database's AspNetUsers table
+        public string? UserId { get; set; }
 
         [Display(Name = "Task Name"), MaxLength(60), Required]
         public string Name { get; set; }
