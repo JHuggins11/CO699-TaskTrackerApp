@@ -3,10 +3,10 @@
 namespace CO699_TaskTrackerApp.Data
 {
     /// <summary>
-    /// Test data used to seed the database with sample users, user accounts and tasks.
+    /// Test data used to seed the database with sample tasks.
     /// 
     /// Created: 15/02/2023
-    /// Modified: 15/02/2023
+    /// Modified: 16/02/2023
     /// </summary>
     public class DbInitialiser
     {
@@ -16,23 +16,9 @@ namespace CO699_TaskTrackerApp.Data
 
         }
 
-        private static void AddUsers(ApplicationDbContext context)
+        private static void AddUserTasks(ApplicationDbContext context)
         {
-            // Skip database seeding if any User records are found
-            if (context.Users.Any())
-            {
-                return; 
-            }
-
-            // TODO: Continue
-            var users = new User[]
-            {
-                new User
-                {
-                    Email = "user1@email.com",
-                    
-                }
-            };
+            // TODO: Add sample tasks
         }
     }
 }
