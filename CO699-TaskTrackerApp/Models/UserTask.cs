@@ -7,14 +7,14 @@ namespace CO699_TaskTrackerApp.Models
     /// have zero, one or many tasks.
     /// 
     /// Created: 20/01/2023
-    /// Modified: 01/02/2023
+    /// Modified: 16/02/2023
     /// </summary>
     public class UserTask
     {
         [Key]
         public int Id { get; set; }
 
-        // Foreign key
+        // Foreign key - user ID from AspNetUsers table
         public int UserId { get; set; }
 
         [Display(Name = "Task Name"), MaxLength(60), Required]
@@ -34,8 +34,5 @@ namespace CO699_TaskTrackerApp.Models
 
         [Required]
         public bool IsCompleted { get; set; } = false;
-
-        // Navigation property
-        public virtual User User { get; set; }
     }
 }
