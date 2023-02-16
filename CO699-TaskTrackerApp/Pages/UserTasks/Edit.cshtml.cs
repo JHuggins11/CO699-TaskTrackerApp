@@ -8,11 +8,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CO699_TaskTrackerApp.Data;
 using CO699_TaskTrackerApp.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace CO699_TaskTrackerApp.Pages.UserTasks
 {
-    //[Authorize]
     public class EditModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;
@@ -32,13 +30,12 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
                 return NotFound();
             }
 
-            var usertask =  await _context.UserTask.FirstOrDefaultAsync(m => m.Id == id);
+            var usertask =  await _context.UserTask.FirstOrDefaultAsync(m => m.ID == id);
             if (usertask == null)
             {
                 return NotFound();
             }
             UserTask = usertask;
-           ViewData["UserId"] = new SelectList(_context.User, "Id", "Email");
             return Page();
         }
 
@@ -59,7 +56,7 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserTaskExists(UserTask.Id))
+                if (!UserTaskExists(UserTask.ID))
                 {
                     return NotFound();
                 }
@@ -74,7 +71,7 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
 
         private bool UserTaskExists(int id)
         {
-          return (_context.UserTask?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.UserTask?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

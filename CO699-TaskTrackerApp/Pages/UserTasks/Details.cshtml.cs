@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CO699_TaskTrackerApp.Data;
 using CO699_TaskTrackerApp.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace CO699_TaskTrackerApp.Pages.UserTasks
 {
-    //[Authorize]
     public class DetailsModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;
@@ -30,7 +28,7 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
                 return NotFound();
             }
 
-            var usertask = await _context.UserTask.FirstOrDefaultAsync(m => m.Id == id);
+            var usertask = await _context.UserTask.FirstOrDefaultAsync(m => m.ID == id);
             if (usertask == null)
             {
                 return NotFound();

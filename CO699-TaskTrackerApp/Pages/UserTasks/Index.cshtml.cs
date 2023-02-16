@@ -7,42 +7,26 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CO699_TaskTrackerApp.Data;
 using CO699_TaskTrackerApp.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 
 namespace CO699_TaskTrackerApp.Pages.UserTasks
 {
-    //[Authorize]
     public class IndexModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager; 
 
-        public IndexModel(CO699_TaskTrackerApp.Data.ApplicationDbContext context, 
-            UserManager<IdentityUser> userManager)
+        public IndexModel(CO699_TaskTrackerApp.Data.ApplicationDbContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
         public IList<UserTask> UserTask { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            // Only display tasks linked to the current user's ID
-            var userTasks = from u in _context.UserTask
-                            select u;
-            var currentUserId = _userManager.GetUserId(User);
-
             if (_context.UserTask != null)
             {
-                userTasks = userTasks.Where(u => u.UserId.ToString() == currentUserId);
-
-                //UserTask = await _context.UserTask
-                //.Include(u => u.User).ToListAsync();
+                UserTask = await _context.UserTask.ToListAsync();
             }
-
-            UserTask = await userTasks.ToListAsync();
         }
     }
 }
