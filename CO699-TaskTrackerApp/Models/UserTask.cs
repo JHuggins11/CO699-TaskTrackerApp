@@ -12,10 +12,10 @@ namespace CO699_TaskTrackerApp.Models
     public class UserTask
     {
         [Key]
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         // Foreign key - user ID taken from database's AspNetUsers table
-        public string? UserId { get; set; }
+        public string? UserID { get; set; }
 
         [Display(Name = "Task Name"), MaxLength(60), Required]
         public string Name { get; set; }
@@ -26,8 +26,8 @@ namespace CO699_TaskTrackerApp.Models
         [Display(Name = "Due Date"), DataType(DataType.Date), Required]
         public DateTime DueDate { get; set; }
 
-        [Display(Name = "Reminder")]
-        public DateTime? ReminderDate { get; set; }
+        [Display(Name = "Reminder Date/Time")]
+        public DateTime? Reminder { get; set; }
 
         [MaxLength(350)]
         public string? Description { get; set; }
