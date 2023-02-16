@@ -2,15 +2,71 @@
 @model CO699_TaskTrackerApp.Pages.UserTasks.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My List";
+}
+<link href="~/css/site.css" rel="stylesheet" type="text/css" />
+
+<h1>My List</h1>
+<br />
+<p>
+    <a class="btn btn-primary" asp-page="Create">Add Task</a>
+</p>
+<form>
+    <p>
+        <!-- Add asp-for search condition attribute from code-behind file for textbox -->
+        <input type="text" placeholder="Search" />
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </p>
+</form>
+
+<!-- Bootstrap card for each task (reference: https://getbootstrap.com/docs/5.2/components/card/#header-and-footer) -->
+@foreach (var item in Model.UserTask)
+{
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="taskCheckbox">
+                <input type="checkbox" class="form-check-input" id="taskCompleteCheck" />
+                <label class="form-check-label" for="taskCompleteCheck">Completed</label>
+            </div>
+            <b>Due @item.DueDate</b>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title">@item.Name [Priority: @item.Priority]</h5>
+                <b>Priority: @item.Priority</b>
+            </div>
+            <p class="card-text">@item.Description</p>
+            <div class="d-inline-flex justify-content-between">
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </div>
+        </div>
+    </div>
 }
 
-<h1>Index</h1>
+@* Sample card for checking layout - not taken from database *@
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div class="taskCheckbox">
+            <input type="checkbox" class="form-check-input" id="taskCompleteCheck" />
+            <label class="form-check-label" for="taskCompleteCheck">Completed</label>
+        </div>
+        <b>Due 15/02/2023</b>
+    </div>
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">Complete assignment</h5>
+            <b>Priority: High</b>
+        </div>
+        <p class="card-text">See assignment brief for more details.</p>
+        <div class="d-flex justify-content-between">
+            <a class="btn btn-primary" asp-page="./Edit">Edit</a>
+            <a class="btn btn-danger" asp-page="./Delete">Delete</a>
+        </div>
+    </div>
+</div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -69,4 +125,4 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@

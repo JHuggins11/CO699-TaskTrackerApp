@@ -1,62 +1,59 @@
 ﻿@page
 @model CO699_TaskTrackerApp.Pages.UserTasks.CreateModel
+@using CO699_TaskTrackerApp.Models
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add Task";
 }
 
-<h1>Create</h1>
-
-<h4>UserTask</h4>
+<h4>Add Task</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="UserTask.UserID" class="control-label"></label>
                 <input asp-for="UserTask.UserID" class="form-control" />
                 <span asp-validation-for="UserTask.UserID" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="UserTask.Name" class="control-label"></label>
                 <input asp-for="UserTask.Name" class="form-control" />
                 <span asp-validation-for="UserTask.Name" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTask.Priority" class="control-label"></label>
-                <select asp-for="UserTask.Priority" class="form-control"></select>
+                <select asp-for="UserTask.Priority" 
+                    asp-items="@Html.GetEnumSelectList<Priority>()" class="form-control"></select>
                 <span asp-validation-for="UserTask.Priority" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTask.DueDate" class="control-label"></label>
                 <input asp-for="UserTask.DueDate" class="form-control" />
                 <span asp-validation-for="UserTask.DueDate" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTask.Reminder" class="control-label"></label>
                 <input asp-for="UserTask.Reminder" class="form-control" />
                 <span asp-validation-for="UserTask.Reminder" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTask.Description" class="control-label"></label>
-                <input asp-for="UserTask.Description" class="form-control" />
+                <textarea asp-for="UserTask.Description" class="form-control"></textarea>
                 <span asp-validation-for="UserTask.Description" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="UserTask.IsCompleted" /> @Html.DisplayNameFor(model => model.UserTask.IsCompleted)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <br />
+            <div class="form-group d-flex justify-content-between">
+                <input type="submit" value="Add" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-danger">Cancel</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
