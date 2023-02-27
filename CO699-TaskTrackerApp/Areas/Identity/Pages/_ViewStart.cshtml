@@ -1,3 +1,10 @@
 ﻿@{
-    Layout = "/Pages/Shared/_GuestLayout.cshtml";
+    if (User.Identity.IsAuthenticated)
+    {
+        Layout = "/Pages/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "/Pages/Shared/_GuestLayout.cshtml";
+    }
 }
