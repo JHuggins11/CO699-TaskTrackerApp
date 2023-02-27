@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CO699_TaskTrackerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230224193823_InitialCreate")]
+    [Migration("20230227152001_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
