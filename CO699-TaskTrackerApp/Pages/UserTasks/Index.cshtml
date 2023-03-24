@@ -18,6 +18,11 @@
         <input type="submit" class="btn btn-primary" value="Submit" />
     </p>
 </form>
+<div class="sort-buttons">
+    <a asp-route-sortOrder="@Model.DateSort">Sort by Date</a><br />
+    <a asp-route-sortOrder="@Model.PrioritySort">Sort by Priority</a>
+</div>
+<br />
 
 <!-- Bootstrap card for each task (reference: https://getbootstrap.com/docs/5.2/components/card/#header-and-footer) -->
 <!-- TODO: By default, have the tasks sorted by due date -->
@@ -29,15 +34,16 @@
             <div class="taskCheckbox">
                 <input type="checkbox" class="form-check-input" id="taskCompleteCheck" />
                 <label class="form-check-label" for="taskCompleteCheck">Completed</label>
+                @Html.DisplayFor(modelItem => item.IsCompleted)
             </div>
-            <b>Due @item.DueDate</b>
+            <p><em>Due: @Html.DisplayFor(modelItem => item.DueDate)</em></p>
         </div>
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <h5 class="card-title">@item.Name [Priority: @item.Priority]</h5>
-                <b>Priority: @item.Priority</b>
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                <p><em>Priority: @Html.DisplayFor(modelItem => item.Priority)</em></p>
             </div>
-            <p class="card-text">@item.Description</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
             <div class="d-inline-flex justify-content-between">
                 <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
                 <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
