@@ -64,4 +64,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.CreateDbIfNotExists();
+
 app.Run();
