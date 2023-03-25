@@ -25,23 +25,21 @@
 <br />
 
 <!-- Bootstrap card for each task (reference: https://getbootstrap.com/docs/5.2/components/card/#header-and-footer) -->
-<!-- TODO: By default, have the tasks sorted by due date -->
-<!-- TODO: Sort tasks by priority or due date -->
 @foreach (var item in Model.UserTasks)
 {
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             <div class="taskCheckbox">
-                <input type="checkbox" class="form-check-input" id="taskCompleteCheck" />
+                <input type="checkbox" class="form-check-input" id="taskCompleteCheck" 
+                    bind="@item.IsCompleted" />
                 <label class="form-check-label" for="taskCompleteCheck">Completed</label>
-                @Html.DisplayFor(modelItem => item.IsCompleted)
             </div>
-            <p><em>Due: @Html.DisplayFor(modelItem => item.DueDate)</em></p>
+            <p><strong>Due: @Html.DisplayFor(modelItem => item.DueDate)</strong></p>
         </div>
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
-                <p><em>Priority: @Html.DisplayFor(modelItem => item.Priority)</em></p>
+                <p><strong>Priority: @Html.DisplayFor(modelItem => item.Priority)</strong></p>
             </div>
             <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
             <div class="d-inline-flex justify-content-between">
@@ -50,9 +48,10 @@
             </div>
         </div>
     </div>
+    <br />
 }
 
-@* Sample card for checking layout - not taken from database *@
+@* Sample card for checking layout - not taken from database 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <div class="taskCheckbox">
@@ -72,7 +71,7 @@
             <a class="btn btn-danger" asp-page="./Delete">Delete</a>
         </div>
     </div>
-</div>
+</div>*@
 
 @*<table class="table">
     <thead>
