@@ -30,14 +30,20 @@ namespace CO699_TaskTrackerApp.Pages.UserTasks
 
         public IList<UserTask> UserTasks { get;set; } = default!;
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             // Reference: https://learn.microsoft.com/en-gb/aspnet/core/data/ef-rp/sort-filter-page?view=aspnetcore-7.0
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             PrioritySort = sortOrder == "Priority" ? "priority_desc" : "Priority";
 
+            CurrentFilter = searchString;
             IQueryable<UserTask> tasksIQ = from t in _context.UserTask
                                            select t;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                tasksIQ = tasksIQ.Where(t => t.Name.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
