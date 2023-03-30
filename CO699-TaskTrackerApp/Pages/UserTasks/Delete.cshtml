@@ -2,15 +2,36 @@
 @model CO699_TaskTrackerApp.Pages.UserTasks.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete Task";
 }
 
-<h1>Delete</h1>
+<h1>Confirmation</h1>
+<h6>Are you sure you want to delete this task?</h6>
+<br />
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div class="taskCheckbox">
+            @Html.DisplayFor(model => model.UserTask.IsCompleted)
+            <label class="form-check-label" for="taskCompleteCheck">Completed</label>
+        </div>
+        <strong>Due: @Html.DisplayFor(model => model.UserTask.DueDate)</strong>
+    </div>
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">@Html.DisplayFor(model => model.UserTask.Name)</h5>
+            <p><strong>Priority: @Html.DisplayFor(model => model.UserTask.Priority)</strong></p>
+        </div>
+        <p class="card-text">@Html.DisplayFor(model => model.UserTask.Description)</p>
+    </div>
+</div>
+<br />
+<form method="post">
+    <input type="hidden" asp-for="UserTask.ID" />
+    <input type="submit" value="Delete" class="btn btn-danger" />     
+    <a class="btn btn-secondary" asp-page="./Index">Back to List</a>
+</form>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>UserTask</h4>
-    <hr />
+@*<div>
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UserTask.UserID)
@@ -61,4 +82,4 @@
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
-</div>
+</div>*@
