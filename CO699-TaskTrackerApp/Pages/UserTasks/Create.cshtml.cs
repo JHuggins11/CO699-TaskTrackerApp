@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CO699_TaskTrackerApp.Data;
 using CO699_TaskTrackerApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CO699_TaskTrackerApp.Pages.UserTasks
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly CO699_TaskTrackerApp.Data.ApplicationDbContext _context;
