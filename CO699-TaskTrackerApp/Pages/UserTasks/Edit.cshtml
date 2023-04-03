@@ -23,32 +23,38 @@
                 <input asp-for="UserTask.Name" class="form-control" />
                 <span asp-validation-for="UserTask.Name" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTask.Priority" class="control-label"></label>
                 <select asp-for="UserTask.Priority"
                         asp-items="@Html.GetEnumSelectList<Priority>()" class="form-control"></select>
                 <span asp-validation-for="UserTask.Priority" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTask.DueDate" class="control-label"></label>
                 <input asp-for="UserTask.DueDate" class="form-control" />
                 <span asp-validation-for="UserTask.DueDate" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <label asp-for="UserTask.Reminder" class="control-label"></label>
+                <label asp-for="UserTask.Reminder" class="control-label">Reminder Date/Time (optional)</label>
                 <input asp-for="UserTask.Reminder" class="form-control" />
                 <span asp-validation-for="UserTask.Reminder" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <label asp-for="UserTask.Description" class="control-label"></label>
+                <label asp-for="UserTask.Description" class="control-label">Description (optional)</label>
                 <textarea asp-for="UserTask.Description" class="form-control"></textarea>
                 <span asp-validation-for="UserTask.Description" class="text-danger"></span>
             </div>
-            @*<div class="form-group form-check">
+            <br />
+            <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="UserTask.IsCompleted" /> @Html.DisplayNameFor(model => model.UserTask.IsCompleted)
+                    <input class="form-check-input" asp-for="UserTask.IsCompleted" /> Completed @*@Html.DisplayNameFor(model => model.UserTask.IsCompleted)*@
                 </label>
-            </div>*@
+            </div>
+            <br />
             <div class="form-group d-flex justify-content-between">
                 <input type="submit" value="Save" class="btn btn-success" />
                 <a asp-page="Index" class="btn btn-danger">Cancel</a>
