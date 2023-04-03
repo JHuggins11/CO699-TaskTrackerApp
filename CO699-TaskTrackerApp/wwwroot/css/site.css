@@ -46,3 +46,8 @@ a#forgot-password {
     border: 1px solid grey;
     padding: 6px;
 }
+
+/* UserTasks/Index.cshtml */
+.completed-task {
+    text-decoration: line-through;
+}
