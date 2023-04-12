@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 
-// UserTasks/Index.cshtml
+/* UserTasks/Index.cshtml - not working
 
 var taskName = document.getElementById("task-name");
 var taskDueDate = document.getElementById("task-due-date");
@@ -25,3 +25,4 @@ function removeStrikeText() {
     taskPriority.classList.remove("completed-task");
     taskDescription.classList.remove("completed-task");
 }
+*/

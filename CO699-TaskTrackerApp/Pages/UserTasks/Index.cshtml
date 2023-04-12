@@ -33,32 +33,58 @@
 <!-- Bootstrap card for each task (reference: https://getbootstrap.com/docs/5.2/components/card/#header-and-footer) -->
 @foreach (var item in Model.UserTasks)
 {
-    <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <!-- TODO: Fix issue with setting task completion status -->
-            <div class="taskCheckbox">
-                <input type="checkbox" asp-for="@item.IsCompleted">
-                @*<input type="checkbox" class="form-check-input" id="taskCompleteCheck"
-            bind="@item.IsCompleted" />*@
-                <label class="form-check-label">Completed</label>
+    // Strikethrough task details if task is set as completed
+    if (item.IsCompleted == true)
+    {
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <!-- TODO: Fix issue with setting task completion status -->
+                <div class="taskCheckbox">
+                    <input type="checkbox" asp-for="@item.IsCompleted">
+                    <label class="form-check-label">Completed</label>
+                </div>
+                <strong id="task-due-date"><strike>Due: @Html.DisplayFor(modelItem => item.DueDate)</strike></strong>
             </div>
-            <strong id="task-due-date">Due: @Html.DisplayFor(modelItem => item.DueDate)</strong>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-title" id="task-name"><strike>@Html.DisplayFor(modelItem => item.Name)</strike></h5>
+                    <p id="task-priority"><strong><strike>Priority: @Html.DisplayFor(modelItem => item.Priority)</strike></strong></p>
+                </div>
+                <p class="card-text" id="task-description"><strike>@Html.DisplayFor(modelItem => item.Description)</strike></p>
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <div class="d-flex justify-content-between">
-                <h5 class="card-title" id="task-name">@Html.DisplayFor(modelItem => item.Name)</h5>
-                <p id="task-priority"><strong>Priority: @Html.DisplayFor(modelItem => item.Priority)</strong></p>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <!-- TODO: Fix issue with setting task completion status -->
+                <div class="taskCheckbox">
+                    <input type="checkbox" asp-for="@item.IsCompleted">
+                    <label class="form-check-label">Completed</label>
+                </div>
+                <strong id="task-due-date">Due: @Html.DisplayFor(modelItem => item.DueDate)</strong>
             </div>
-            <p class="card-text" id="task-description">@Html.DisplayFor(modelItem => item.Description)</p>
-            <div class="d-flex justify-content-between">
-                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
-                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-title" id="task-name">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p id="task-priority"><strong>Priority: @Html.DisplayFor(modelItem => item.Priority)</strong></p>
+                </div>
+                <p class="card-text" id="task-description">@Html.DisplayFor(modelItem => item.Description)</p>
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </div>
             </div>
         </div>
-    </div>
+    }
     <br />
 
-    <!-- TODO: Fix functions -->
+    @*<!-- TODO: Fix functions -->
     if (item.IsCompleted == true)
     {
         <script>strikeText();</script>
@@ -66,7 +92,7 @@
     else
     {
         <script>removeStrikeText();</script>
-    }
+    }*@
 }
 
 @*<table class="table">
