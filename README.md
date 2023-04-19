@@ -5,7 +5,8 @@ Instructions to run prototype (targeting .NET 7, Visual Studio 2022 required):
 3. After the application is launched and the login page is shown, register for a new account with sample details [e.g. "user1@testemail.com" as the email and "TestUser1!" as the password]
 4. Confirm the account by clicking on the link shown after submitting the registration form
 5. Once redirected to the My List page, sample tasks will be shown. Click the Add Task button to add a new task to the list
-6. To view account settings, click on the account's email in the top-right corner of the navigation bar
+6. Filter tasks in the list by title using the search box, or sort by due date or task priority level in ascending/descending order using the sorting hyperlinks 
+7. To view account settings, click on the account's email in the top-right corner of the navigation bar
 
 Key Razor Pages with modifications:
 - UserTasks/[Index.cshtml](https://github.com/JHuggins11/CO699-TaskTrackerApp/blob/master/CO699-TaskTrackerApp/Pages/UserTasks/Index.cshtml) - The main page where the task list is located; includes the Bootstrap Cards component to display each task
