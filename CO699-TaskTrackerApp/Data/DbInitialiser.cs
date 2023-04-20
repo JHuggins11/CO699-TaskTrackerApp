@@ -5,8 +5,7 @@ namespace CO699_TaskTrackerApp.Data
     /// <summary>
     /// Test data used to seed the database with sample tasks.
     /// 
-    /// Created: 15/02/2023
-    /// Modified: 24/03/2023
+    /// Modified: 20/04/2023
     /// </summary>
     public class DbInitialiser
     {

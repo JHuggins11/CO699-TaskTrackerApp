@@ -6,8 +6,7 @@ namespace CO699_TaskTrackerApp.Models
     /// Represents a task that is associated with a specific user. A user can
     /// have zero, one or many tasks.
     /// 
-    /// Created: 20/01/2023
-    /// Modified: 16/02/2023
+    /// Modified: 20/04/2023
     /// </summary>
     public class UserTask
     {
