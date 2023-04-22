@@ -19,6 +19,6 @@ Key Razor Pages with modifications:
 
 Key C# classes from report:
 - [UserTask.cs](CO699-TaskTrackerApp/Models/UserTask.cs) - Represents a task added by a user in the database
-- [Priority.cs](CO699-TaskTrackerApp/Models/Priority.cs) - Represents the priority levels a task can have; enumeration class
+- [Priority.cs](CO699-TaskTrackerApp/Models/Priority.cs) - Enumeration type representing task priority levels
 - [DbInitialiser.cs](CO699-TaskTrackerApp/Data/DbInitialiser.cs) - Seeds the database with sample tasks for testing
 - [Extensions.cs](CO699-TaskTrackerApp/Data/Extensions.cs) - Checks whether the database exists and if it does not, it creates a new database and calls DbInitialiser to seed sample data
