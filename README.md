@@ -16,3 +16,9 @@ Key Razor Pages with modifications:
 - UserTasks/[Create.cshtml](CO699-TaskTrackerApp/Pages/UserTasks/Create.cshtml), [Edit.cshtml](CO699-TaskTrackerApp/Pages/UserTasks/Edit.cshtml), [Delete.cshtml](CO699-TaskTrackerApp/Pages/UserTasks/Delete.cshtml) - CRUD operations for managing tasks
 - Shared/[_Layout.cshtml](CO699-TaskTrackerApp/Pages/Shared/_Layout.cshtml) - Contains the page layout structure including the navigation bar and its links, shown to users that are logged in
 - Shared/[_GuestLayout.cshtml](CO699-TaskTrackerApp/Pages/Shared/_GuestLayout.cshtml) - Contains the page layout structure without the navigation bar's links, shown to users that are not logged in
+
+Key C# classes from report:
+- [UserTask.cs](CO699-TaskTrackerApp/Models/UserTask.cs) - Represents a task added by a user in the database
+- [Priority.cs](CO699-TaskTrackerApp/Models/Priority.cs) - Represents the priority levels a task can have; enumeration class
+- [DbInitialiser.cs](CO699-TaskTrackerApp/Data/DbInitialiser.cs) - Seeds the database with sample tasks for testing
+- [Extensions.cs](CO699-TaskTrackerApp/Data/Extensions.cs) - Checks whether the database exists and if it does not, it creates a new database and calls DbInitialiser to seed sample data
