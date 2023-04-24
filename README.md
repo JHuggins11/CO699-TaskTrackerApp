@@ -1,5 +1,5 @@
 # CO699-TaskTrackerApp
-Instructions to run prototype (targets .NET 7; requires Visual Studio 2022 with "ASP.NET and web development" workload selected on installation):
+### Instructions to run prototype (targets .NET 7; requires Visual Studio 2022 with "ASP.NET and web development" workload selected on installation):
 1. Clone this repository and open the project solution file "CO699-TaskTrackerApp.sln" in Visual Studio
 2. Run the solution using IIS Express by clicking on the green play button - select IIS Express using the dropdown arrow if it is not currently selected
 3. If prompted by the framework to apply database migrations, proceed by clicking on the apply button
