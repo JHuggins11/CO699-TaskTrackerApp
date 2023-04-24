@@ -22,3 +22,5 @@ Key C# classes from report:
 - [Priority.cs](CO699-TaskTrackerApp/Models/Priority.cs) - Enumeration type representing task priority levels
 - [DbInitialiser.cs](CO699-TaskTrackerApp/Data/DbInitialiser.cs) - Seeds the database with sample tasks for testing
 - [Extensions.cs](CO699-TaskTrackerApp/Data/Extensions.cs) - Checks whether the database exists and if it does not, it creates a new database and calls DbInitialiser to seed sample data
+
+CSS and JavaScript code are located in the "[wwwroot](CO699-TaskTrackerApp/wwwroot)" folder.
