@@ -1,9 +1,9 @@
 # CO699-TaskTrackerApp
-Instructions to run prototype (targeting .NET 7, Visual Studio 2022 required):
-1. Clone this GitHub repository and open the project solution file "CO699-TaskTrackerApp.sln" in Visual Studio
+Instructions to run prototype (targets .NET 7; requires Visual Studio 2022 with "ASP.NET and web development" workload selected on installation):
+1. Clone this repository and open the project solution file "CO699-TaskTrackerApp.sln" in Visual Studio
 2. Run the solution using IIS Express by clicking on the green play button - select IIS Express using the dropdown arrow if it is not currently selected
 3. If prompted by the framework to apply database migrations, proceed by clicking on the apply button
-4. After the application is launched and the login page is shown, register for a new account with sample details [e.g. "user1@testemail.com" as the email and "TestUser1!" as the password]
+4. After the application is launched and the login page is shown, register for a new account with sample details [e.g. "testuser@testemail.com" as the email and "TestUser0!" as the password]
 5. Confirm the account by clicking on the link shown after submitting the registration form
 6. Once redirected to the My List page, sample tasks will be shown. Click the Add Task button to add a new task to the list
 7. Filter tasks in the list by title using the search box, or sort by due date or task priority level in ascending/descending order using the sorting hyperlinks 
